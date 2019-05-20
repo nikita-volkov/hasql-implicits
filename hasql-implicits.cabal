@@ -21,6 +21,7 @@ library
   ghc-options: -funbox-strict-fields
   default-language: Haskell2010
   exposed-modules:
+    Hasql.Implicits.ExplicitEncoders
     Hasql.Implicits.ImplicitEncoders
   other-modules:
     Hasql.Implicits.Prelude
