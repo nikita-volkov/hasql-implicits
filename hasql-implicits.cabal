@@ -21,8 +21,7 @@ library
   ghc-options: -funbox-strict-fields
   default-language: Haskell2010
   exposed-modules:
-    Hasql.Implicits.ExplicitEncoders
-    Hasql.Implicits.ImplicitEncoders
+    Hasql.Implicits.Encoders
   other-modules:
     Hasql.Implicits.Prelude
   build-depends:
@@ -30,7 +29,7 @@ library
     base >=4.12 && <5,
     bytestring >=0.10 && <0.11,
     containers >=0.6 && <0.7,
-    hasql >=1.3.0.5 && <1.4,
+    hasql >=1.4 && <1.5,
     network-ip >=0.2 && <1,
     ptr >=0.16.6 && <0.17,
     scientific >=0.2 && <0.4,
