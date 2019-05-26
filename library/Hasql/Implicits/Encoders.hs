@@ -6,66 +6,66 @@ import Hasql.Encoders
 import qualified Data.Aeson as Aeson
 
 
-{-| Provides a default implementation of value encoder. -}
-class DefaultValueEncoder a where
-  {-| Default value encoder with nullability specified. -}
-  defaultValue :: NullableOrNot Value a
+{-| Provides a default implementation of parameter encoder. -}
+class DefaultParamEncoder a where
+  {-| Default parameter encoder with nullability specified. -}
+  defaultParam :: NullableOrNot Value a
 
 #define RIGHT_QUOTED(a) a'
 #define INSTANCES(VALUE, ENCODER) \
-instance DefaultValueEncoder VALUE where { \
-  defaultValue = nonNullable ENCODER; \
+instance DefaultParamEncoder VALUE where { \
+  defaultParam = nonNullable ENCODER; \
 }; \
-instance DefaultValueEncoder [VALUE] where { \
-  defaultValue = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
+instance DefaultParamEncoder [VALUE] where { \
+  defaultParam = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
 }; \
-instance DefaultValueEncoder [Maybe VALUE] where { \
-  defaultValue = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
+instance DefaultParamEncoder [Maybe VALUE] where { \
+  defaultParam = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
 }; \
-instance DefaultValueEncoder [[VALUE]] where { \
-  defaultValue = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
+instance DefaultParamEncoder [[VALUE]] where { \
+  defaultParam = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
 }; \
-instance DefaultValueEncoder [[Maybe VALUE]] where { \
-  defaultValue = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
+instance DefaultParamEncoder [[Maybe VALUE]] where { \
+  defaultParam = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Vector VALUE) where { \
-  defaultValue = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
+instance DefaultParamEncoder (Vector VALUE) where { \
+  defaultParam = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Vector (Maybe VALUE)) where { \
-  defaultValue = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
+instance DefaultParamEncoder (Vector (Maybe VALUE)) where { \
+  defaultParam = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Vector (Vector VALUE)) where { \
-  defaultValue = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
+instance DefaultParamEncoder (Vector (Vector VALUE)) where { \
+  defaultParam = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Vector (Vector (Maybe VALUE))) where { \
-  defaultValue = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
+instance DefaultParamEncoder (Vector (Vector (Maybe VALUE))) where { \
+  defaultParam = (nonNullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Maybe VALUE) where { \
-  defaultValue = nullable ENCODER; \
+instance DefaultParamEncoder (Maybe VALUE) where { \
+  defaultParam = nullable ENCODER; \
 }; \
-instance DefaultValueEncoder (Maybe [VALUE]) where { \
-  defaultValue = (nullable . array . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
+instance DefaultParamEncoder (Maybe [VALUE]) where { \
+  defaultParam = (nullable . array . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Maybe [Maybe VALUE]) where { \
-  defaultValue = (nullable . array . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
+instance DefaultParamEncoder (Maybe [Maybe VALUE]) where { \
+  defaultParam = (nullable . array . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Maybe [[VALUE]]) where { \
-  defaultValue = (nullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
+instance DefaultParamEncoder (Maybe [[VALUE]]) where { \
+  defaultParam = (nullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Maybe [[Maybe VALUE]]) where { \
-  defaultValue = (nullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
+instance DefaultParamEncoder (Maybe [[Maybe VALUE]]) where { \
+  defaultParam = (nullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Maybe (Vector VALUE)) where { \
-  defaultValue = (nullable . array . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
+instance DefaultParamEncoder (Maybe (Vector VALUE)) where { \
+  defaultParam = (nullable . array . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Maybe (Vector (Maybe VALUE))) where { \
-  defaultValue = (nullable . array . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
+instance DefaultParamEncoder (Maybe (Vector (Maybe VALUE))) where { \
+  defaultParam = (nullable . array . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Maybe (Vector (Vector VALUE))) where { \
-  defaultValue = (nullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
+instance DefaultParamEncoder (Maybe (Vector (Vector VALUE))) where { \
+  defaultParam = (nullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nonNullable) ENCODER; \
 }; \
-instance DefaultValueEncoder (Maybe (Vector (Vector (Maybe VALUE)))) where { \
-  defaultValue = (nullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
+instance DefaultParamEncoder (Maybe (Vector (Vector (Maybe VALUE)))) where { \
+  defaultParam = (nullable . array . dimension RIGHT_QUOTED(foldl) . dimension RIGHT_QUOTED(foldl) . element . nullable) ENCODER; \
 }
 
 INSTANCES(Char, char)
@@ -89,12 +89,3 @@ INSTANCES((NetAddr IP), inet)
 
 #undef INSTANCES
 #undef RIGHT_QUOTED
-
-
-{-| Parameter encoder derived from its input type. -}
-defaultParam :: DefaultValueEncoder param => Params param
-defaultParam = param defaultValue
-
-{-| Array element encoder derived from its input type. -}
-defaultElement :: DefaultValueEncoder element => Array element
-defaultElement = element defaultValue
