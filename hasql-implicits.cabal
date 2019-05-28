@@ -26,7 +26,7 @@ library
     Hasql.Implicits.Prelude
   build-depends:
     aeson >=1 && <2,
-    base >=4.9 && <5,
+    base >=4.12 && <5,
     bytestring >=0.10 && <0.11,
     containers >=0.6 && <0.7,
     hasql >=1.4 && <1.5,
