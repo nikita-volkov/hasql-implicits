@@ -1,6 +1,6 @@
 name: hasql-implicits
 version: 0.1
-synopsis: Toolkit for constructing Hasql statements dynamically
+synopsis: Implicit definitions for Hasql, such as default codecs for standard types
 homepage: https://github.com/nikita-volkov/hasql-implicits
 bug-reports: https://github.com/nikita-volkov/hasql-implicits/issues
 author: Nikita Volkov <nikita.y.volkov@mail.ru>
