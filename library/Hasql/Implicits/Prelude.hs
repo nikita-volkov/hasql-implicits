@@ -1,6 +1,7 @@
 module Hasql.Implicits.Prelude
 (
   module Exports,
+  foldlStrict,
 )
 where
 
@@ -104,3 +105,7 @@ import Data.Time as Exports
 -- network-ip
 -------------------------
 import Network.IP.Addr as Exports (NetAddr, IP)
+
+{-# INLINE foldlStrict #-}
+foldlStrict :: Foldable foldable => (b -> a -> b) -> b -> foldable a -> b
+foldlStrict = foldl'
