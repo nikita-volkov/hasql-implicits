@@ -31,7 +31,6 @@ library
     containers >=0.6 && <0.7,
     hasql >=1.4 && <1.5,
     network-ip >=0.2 && <1,
-    ptr >=0.16.6 && <0.17,
     scientific >=0.2 && <0.4,
     text >=1 && <2,
     time >=1.4 && <2,
