@@ -29,7 +29,7 @@ library
     base >=4.12 && <5,
     bytestring >=0.10 && <0.11,
     containers >=0.6 && <0.7,
-    hasql >=1.4 && <1.5,
+    hasql >=1.4 && <1.6,
     network-ip >=0.2 && <1,
     scientific >=0.2 && <0.4,
     text >=1 && <2,
