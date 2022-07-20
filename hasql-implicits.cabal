@@ -1,5 +1,5 @@
 name: hasql-implicits
-version: 0.1.0.4
+version: 0.1.0.5
 synopsis: Implicit definitions for Hasql, such as default codecs for standard types
 homepage: https://github.com/nikita-volkov/hasql-implicits
 bug-reports: https://github.com/nikita-volkov/hasql-implicits/issues
@@ -29,7 +29,7 @@ library
     base >=4.12 && <5,
     bytestring >=0.10 && <0.12,
     containers >=0.6 && <0.7,
-    hasql >=1.4 && <1.6,
+    hasql >=1.4 && <1.7,
     network-ip >=0.2 && <1,
     scientific >=0.2 && <0.4,
     text >=1 && <3,
