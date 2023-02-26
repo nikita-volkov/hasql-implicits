@@ -3,6 +3,7 @@ module Hasql.Implicits.Encoders where
 
 import Hasql.Implicits.Prelude
 import Hasql.Encoders
+import qualified Hasql.Encoders as Encoders (bool)
 import qualified Data.Aeson as Aeson
 
 
@@ -85,5 +86,6 @@ INSTANCES(TimeOfDay, time)
 INSTANCES(LocalTime, timestamp)
 INSTANCES((TimeOfDay, TimeZone), timetz)
 INSTANCES((NetAddr IP), inet)
+INSTANCES(Bool, Encoders.bool)
 
 #undef INSTANCES
