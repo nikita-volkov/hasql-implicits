@@ -1,14 +1,14 @@
 {-# LANGUAGE CPP #-}
+
 module Hasql.Implicits.Encoders where
 
-import Hasql.Implicits.Prelude hiding (bool)
-import Hasql.Encoders
 import qualified Data.Aeson as Aeson
+import Hasql.Encoders
+import Hasql.Implicits.Prelude hiding (bool)
 
-
-{-| Provides a default implementation of parameter encoder. -}
+-- | Provides a default implementation of parameter encoder.
 class DefaultParamEncoder a where
-  {-| Default parameter encoder with nullability specified. -}
+  -- | Default parameter encoder with nullability specified.
   defaultParam :: NullableOrNot Value a
 
 #define INSTANCES(VALUE, ENCODER) \
@@ -67,24 +67,24 @@ instance DefaultParamEncoder (Maybe (Vector (Vector (Maybe VALUE)))) where { \
   defaultParam = (nullable . array . dimension foldlStrict . dimension foldlStrict . element . nullable) ENCODER; \
 }
 
-INSTANCES(Char, char)
-INSTANCES(Double, float8)
-INSTANCES(Float, float4)
-INSTANCES(Int16, int2)
-INSTANCES(Int32, int4)
-INSTANCES(Int64, int8)
-INSTANCES(ByteString, bytea)
-INSTANCES(Scientific, numeric)
-INSTANCES(Text, text)
-INSTANCES(UTCTime, timestamptz)
-INSTANCES(Aeson.Value, jsonb)
-INSTANCES(UUID, uuid)
-INSTANCES(Day, date)
-INSTANCES(DiffTime, interval)
-INSTANCES(TimeOfDay, time)
-INSTANCES(LocalTime, timestamp)
-INSTANCES((TimeOfDay, TimeZone), timetz)
-INSTANCES((NetAddr IP), inet)
-INSTANCES(Bool, bool)
+INSTANCES (Char, char)
+INSTANCES (Double, float8)
+INSTANCES (Float, float4)
+INSTANCES (Int16, int2)
+INSTANCES (Int32, int4)
+INSTANCES (Int64, int8)
+INSTANCES (ByteString, bytea)
+INSTANCES (Scientific, numeric)
+INSTANCES (Text, text)
+INSTANCES (UTCTime, timestamptz)
+INSTANCES (Aeson.Value, jsonb)
+INSTANCES (UUID, uuid)
+INSTANCES (Day, date)
+INSTANCES (DiffTime, interval)
+INSTANCES (TimeOfDay, time)
+INSTANCES (LocalTime, timestamp)
+INSTANCES ((TimeOfDay, TimeZone), timetz)
+INSTANCES ((NetAddr IP), inet)
+INSTANCES (Bool, bool)
 
 #undef INSTANCES
