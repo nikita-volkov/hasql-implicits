@@ -4,8 +4,6 @@ module Hasql.Implicits.Prelude
   )
 where
 
--- base
--------------------------
 import Control.Applicative as Exports
 import Control.Arrow as Exports
 import Control.Category as Exports
@@ -18,11 +16,6 @@ import Control.Monad.IO.Class as Exports
 import Control.Monad.ST as Exports
 import Data.Bits as Exports
 import Data.Bool as Exports
--- containers
--------------------------
-
--- bytestring
--------------------------
 import Data.ByteString as Exports (ByteString)
 import Data.Char as Exports
 import Data.Coerce as Exports
@@ -46,24 +39,11 @@ import Data.Ord as Exports
 import Data.Proxy as Exports
 import Data.Ratio as Exports
 import Data.STRef as Exports
--- text
--------------------------
-
--- vector
--------------------------
-
--- scientific
--------------------------
 import Data.Scientific as Exports (Scientific)
 import Data.Semigroup as Exports
 import Data.Sequence as Exports (Seq)
 import Data.String as Exports
 import Data.Text as Exports (Text)
--- uuid
--------------------------
-
--- time
--------------------------
 import Data.Time as Exports
 import Data.Traversable as Exports
 import Data.Tuple as Exports
@@ -81,8 +61,6 @@ import GHC.Conc as Exports hiding (threadWaitRead, threadWaitReadSTM, threadWait
 import GHC.Exts as Exports (IsList (..), groupWith, inline, lazy, sortWith)
 import GHC.Generics as Exports (Generic, Generic1)
 import GHC.IO.Exception as Exports
--- network-ip
--------------------------
 import Network.IP.Addr as Exports (IP, NetAddr)
 import Numeric as Exports
 import System.Environment as Exports
@@ -93,8 +71,6 @@ import System.IO.Unsafe as Exports
 import System.Mem as Exports
 import System.Mem.StableName as Exports
 import System.Timeout as Exports
-import Text.ParserCombinators.ReadP as Exports (ReadP, ReadS, readP_to_S, readS_to_P)
-import Text.ParserCombinators.ReadPrec as Exports (ReadPrec, readP_to_Prec, readPrec_to_P, readPrec_to_S, readS_to_Prec)
 import Text.Printf as Exports (hPrintf, printf)
 import Text.Read as Exports (Read (..), readEither, readMaybe)
 import Unsafe.Coerce as Exports
