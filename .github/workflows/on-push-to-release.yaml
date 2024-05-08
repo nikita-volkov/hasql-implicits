@@ -15,18 +15,19 @@ concurrency:
 jobs:
 
   format:
-    uses: nikita-volkov/haskell-hackage-lib-github-actions-workflows/.github/workflows/format.yaml@v2
+    uses: ./.github/workflows/format.yaml
     secrets: inherit
 
   check:
     uses: ./.github/workflows/check.yaml
     secrets: inherit
-
+  
   release:
     needs:
       - format
       - check
-    uses: nikita-volkov/haskell-hackage-lib-github-actions-workflows/.github/workflows/release.yaml@v2
+    uses: nikita-volkov/haskell-hackage-lib-github-actions-workflows/.github/workflows/release.yaml@v3
     secrets: inherit
     with:
       prefix-tag-with-v: false
+      docs: true
