@@ -30,6 +30,7 @@ import Data.Functor as Exports hiding (unzip)
 import Data.Functor.Contravariant as Exports
 import Data.Functor.Identity as Exports
 import Data.IORef as Exports
+import Data.IP as Exports (IPRange)
 import Data.Int as Exports
 import Data.Ix as Exports
 import Data.List as Exports hiding (all, and, any, concat, concatMap, elem, find, foldl, foldl', foldl1, foldr, foldr1, isSubsequenceOf, mapAccumL, mapAccumR, maximum, maximumBy, minimum, minimumBy, notElem, or, product, sortOn, sum, uncons)
@@ -61,7 +62,6 @@ import GHC.Conc as Exports hiding (threadWaitRead, threadWaitReadSTM, threadWait
 import GHC.Exts as Exports (IsList (..), groupWith, inline, lazy, sortWith)
 import GHC.Generics as Exports (Generic, Generic1)
 import GHC.IO.Exception as Exports
-import Network.IP.Addr as Exports (IP, NetAddr)
 import Numeric as Exports
 import System.Environment as Exports
 import System.Exit as Exports
