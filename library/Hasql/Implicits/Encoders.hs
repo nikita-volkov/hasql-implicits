@@ -85,7 +85,7 @@ INSTANCES(DiffTime, interval)
 INSTANCES(TimeOfDay, time)
 INSTANCES(LocalTime, timestamp)
 INSTANCES((TimeOfDay, TimeZone), timetz)
-INSTANCES((NetAddr IP), inet)
+INSTANCES(IPRange, inet)
 INSTANCES(Bool, bool)
 {- ORMOLU_ENABLE -}
 
