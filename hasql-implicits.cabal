@@ -1,6 +1,6 @@
 cabal-version: 3.0
 name: hasql-implicits
-version: 0.2.0.1
+version: 0.2.0.2
 synopsis:
   Implicit definitions for Hasql, such as default codecs for standard types
 
@@ -14,7 +14,7 @@ license-file: LICENSE
 
 source-repository head
   type: git
-  location: git://github.com/nikita-volkov/hasql-implicits.git
+  location: https://github.com/nikita-volkov/hasql-implicits
 
 library
   hs-source-dirs: library
@@ -44,7 +44,7 @@ library
     base >=4.12 && <5,
     bytestring >=0.10 && <1,
     containers >=0.6 && <1,
-    hasql >=1.8 && <1.10,
+    hasql >=1.8 && <1.11,
     iproute >=1.7 && <1.8,
     scientific >=0.2 && <1,
     text >=1 && <3,
