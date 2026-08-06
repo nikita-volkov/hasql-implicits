@@ -13,7 +13,6 @@ license: MIT
 license-file: LICENSE
 extra-doc-files:
   CHANGELOG.md
-  README.md
 
 source-repository head
   type: git
