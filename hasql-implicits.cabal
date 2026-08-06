@@ -11,6 +11,9 @@ maintainer: Nikita Volkov <nikita.y.volkov@mail.ru>
 copyright: (c) 2019, Nikita Volkov
 license: MIT
 license-file: LICENSE
+extra-doc-files:
+  CHANGELOG.md
+  README.md
 
 source-repository head
   type: git
@@ -44,7 +47,7 @@ library
     base >=4.12 && <5,
     bytestring >=0.10 && <1,
     containers >=0.6 && <1,
-    hasql >=1.8 && <1.11,
+    hasql >=1.8 && <1.11 || >=2.0 && <2.1,
     iproute >=1.7 && <1.8,
     scientific >=0.2 && <1,
     text >=1 && <3,
